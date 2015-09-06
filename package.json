@@ -1,0 +1,34 @@
+{
+  "name": "code2doc",
+  "version": "0.1.0",
+  "description": "An useful tool for transfer code to document.",
+  "main": "bin/code2doc.js",
+  "bin": {
+    "code2doc": "code2doc.js"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "async": "^1.4.2",
+    "commander": "^2.8.1",
+    "swig": "^1.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coderq/code2doc.git"
+  },
+  "keywords": [
+    "code2doc"
+  ],
+  "author": "CoderQ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coderq/code2doc/issues"
+  },
+  "homepage": "https://github.com/coderq/code2doc#readme"
+}

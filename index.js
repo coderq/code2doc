@@ -7,8 +7,8 @@ var fs = require('fs');
 var path = require('path');
 var async = require('async');
 var program = require('commander');
-var app = require('../package');
-var H = require('../helper');
+var app = require('./package');
+var H = require('./helper');
 
 program
     .version(app.version)
@@ -21,23 +21,23 @@ program
 program.code = program.code || '';
 program.document = program.document || 'doc';
 program.parser = program.parser || 'node.js';
-program.template = program.template || 'default'
+program.template = program.template || 'default';
 
 var code_dir = path.resolve(program.code);
 var doc_dir = path.resolve(program.document);
 var parser_path = ~program.parser.indexOf('./')
     ? path.resolve(program.parser)
-    : path.resolve('../parsers', program.parser + '.js');
+    : path.resolve(__dirname, 'parsers', program.parser + '.js');
 var template = ~program.template.indexOf('./')
     ? path.resolve(program.template)
-    : path.resolve('../templates', program.template + '.swig');
+    : path.resolve(__dirname, 'templates', program.template + '.swig');
 var host = program.host || '';
 
 if (!fs.existsSync(code_dir)) {
-    throw Error('代码路径错误！');
+    throw Error('Code folder not found!');
 }
 if (!fs.existsSync(parser_path)) {
-    throw Error('解析器不存在！');
+    throw Error('Parser not found!');
 }
 if (!fs.existsSync(doc_dir)) {
     fs.mkdirSync(doc_dir);
